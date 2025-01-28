@@ -1,7 +1,7 @@
 class Flashcard:
     def __init__(self, front, back, category=""):
-        self.front = front  # Question/prompt side
-        self.back = back    # Answer side
+        self.front = front  
+        self.back = back    
         self.category = category
         self.is_flipped = False
         
@@ -13,6 +13,7 @@ class Flashcard:
         """Return the current visible side of the card"""
         return self.back if self.is_flipped else self.front
     
+    # Wish to replace with AI grading later.
     def check_answer(self, answer):
         """Check if the provided answer matches the back of the card"""
         return answer.lower().strip() == self.back.lower().strip()
