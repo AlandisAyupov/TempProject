@@ -32,7 +32,7 @@ def install_requirements(requirements_file="requirements.txt", venv_dir="venv"):
     user_input = ask_user("Do you want to install the requirements from the file?")
     if user_input:
         venv_bin = Path(venv_dir) / ("Scripts" if os.name == "nt" else "bin")
-        pip_path = venv_bin / "pip"
+        pip_path = venv_bin / "pip.exe"
 
         if not pip_path.exists():
             raise FileNotFoundError(f"Pip not found in virtual environment {venv_dir}. Is the venv properly set up?")
@@ -46,5 +46,5 @@ def install_requirements(requirements_file="requirements.txt", venv_dir="venv"):
     else:
         print("Skipping requirements installation.")
     
-create_virtual_env()
-install_requirements()
+create_virtual_env("backend/venv")
+install_requirements(requirements_file="backend/requirements.txt", venv_dir="backend/venv")
