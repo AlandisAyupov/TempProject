@@ -1,9 +1,19 @@
 class Flashcard:
-    def __init__(self, front, back, category=""):
+    def __init__(self, id, front, back, category=""):
+        self.id = id
         self.front = front  # Question/prompt side
         self.back = back    # Answer side
         self.category = category
         self.is_flipped = False
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "front": self.front,
+            "back": self.back,
+            "category": self.category,
+            "is_flipped": self.is_flipped
+        }
         
     def flip(self):
         """Flip the card from front to back or vice versa"""
