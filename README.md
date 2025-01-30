@@ -15,6 +15,7 @@ A digital flashcard application to help students study more effectively.
 ```bash
 git clone [repository-url]
 cd [project-directory]
+```
 
 2. Set up the environment
 python backend/createEnvironment.py
